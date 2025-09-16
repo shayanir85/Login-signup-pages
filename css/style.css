@@ -2,9 +2,11 @@
     --light-blue: #add6ff;
     --light-grey: #f3f3f3;
 }
-*{
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .items-center {
     display: flex;
     justify-content: center;
@@ -13,6 +15,7 @@
     place-items: center;
     height: 100vh;
 }
+
 .form-control {
     padding: 60px;
     background: var(--light-grey);
@@ -20,19 +23,23 @@
     box-shadow: 15px 15px 0px 0px var(--light-blue);
     transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.form-control > *{
+
+.form-control>* {
     display: block;
 }
+
 .form-control:hover {
     box-shadow: 10px 10px 0px 0px var(--light-blue);
     transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .form-label {
     color: #4a4a4a;
     margin-top: 20px;
-   
+
 
 }
+
 .form-input {
     width: 250px;
     border-radius: 5px;
@@ -40,10 +47,14 @@
     border: 0px;
 }
 
+.form-input:focus {
+    border: 2px solid var(--light-blue);
+}
+
 
 .btn-submit {
     position: relative;
-    padding: 10px  30px;
+    padding: 10px 30px;
     margin-top: 50px;
     background: var(--light-grey);
     border: 1px solid black;
@@ -56,9 +67,27 @@
     box-shadow: 5px 5px 0px 0px var(--light-blue);
     transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .btn-submit:active {
     box-shadow: 2px 2px 0px 0px var(--light-blue);
 }
-.text-center{
+
+.text-center {
     text-align: center;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.m-2 {
+    margin: 2rem;
+}
+
+.m-3 {
+    margin: 3rem;
+}
+
+.m-4 {
+    margin: 4rem;
 }
