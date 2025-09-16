@@ -6,7 +6,6 @@ $server = 'localhost';
 $username_server = 'root';
 $DB = mysqli_connect($server, $username_server, '', 'mydb'); //DB data base
 session_start();
-$_SESSION['user'] = $user;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['user']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['con-pass'])) {
         $user = htmlspecialchars($_POST['user'], ENT_QUOTES);
@@ -22,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ) {
                 mysqli_query($DB, "INSERT INTO `user`(`user_name`, `email`, `password`, `created_at`) VALUES ('$user','$email','$password','$date')");
                 setcookie("user", $user, time() + (30 * 24 * 60 * 60), "/");
+                $_SESSION['user'] = $user;
                 header('location:index.php');
                 die('connected');
             }
