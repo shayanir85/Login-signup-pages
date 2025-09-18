@@ -6,8 +6,11 @@
             (isset($_COOKIE["user"]))? $user = $_COOKIE["user"]: $user = '';
             $log = "you are logged in $user";
         }else{
-            header("location:logIn.php");
+            (isset($_COOKIE['user']))? header('Location:logIn.php') :header('Location:signIn.php');
         }
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            setcookie("user", "", time() - 0,"/");
+         }
     ?>
 <head>
     <link rel="stylesheet" href="css/style.css">
@@ -16,6 +19,9 @@
     <title>homepage</title>
 </head>
 <body>
+    <form method="post" action="index.php">
+        <button>logOut</button>
+    </form>
     <h1 class="text-center"> mainpage</h1>
     <span class="text-center"><?= $log ?></span>
 </body>
